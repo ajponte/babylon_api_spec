@@ -30,7 +30,7 @@ jobs:
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: api-spec
+          name: api-spec-${{ github.run_id }}
           path: |
             spec/.bundle/babylon-api-spec.yml
             spec/.bundle/babylon-api-spec.json
