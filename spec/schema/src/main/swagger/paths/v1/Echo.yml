@@ -1,0 +1,21 @@
+---
+
+get:
+  tags: ["echo"]
+  # Path in code where the controller logic lives.
+  # todo: update so that the full path is not needed.
+  operationId: "server.controllers.echo.do_echo"
+  summary: "Echo"
+  parameters:
+    - name: inputVal
+      in: query
+      schema:
+        type: string
+      required: false
+  responses:
+    "200":
+      $ref: "../../components/responses.yml#/HttpEchoResponse"
+    '400':
+      $ref: "../../components/responses.yml#/HttpBadRequestResponse"
+    '500':
+      $ref: "../../components/responses.yml#/HttpInternalServerErrorResponse"

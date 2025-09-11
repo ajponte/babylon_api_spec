@@ -1,0 +1,29 @@
+---
+openapi: 3.0.0
+info:
+  license:
+    name: Unlicense
+    url: https://unlicense.org/
+  title: Babylon API
+  version: 1.0.0
+  description: Babylon API Specification.
+
+servers:
+  - url: /api
+
+security:
+  - bearerAuth: [] # Apply API key security globally to all operations
+
+
+paths:
+  /echo:
+    $ref: "./paths/v1/Echo.yml"
+
+components:
+  securitySchemes:
+    bearerAuth: # arbitrary name for the security scheme
+      type: http
+      scheme: bearer
+      bearerFormat: JWT # optional, arbitrary value for documentation purposes
+      # Path to where the decode logic lives
+      x-bearerInfoFunc: server.app.decode_token
