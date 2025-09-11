@@ -4,9 +4,9 @@ info:
   license:
     name: Unlicense
     url: https://unlicense.org/
-  title: Echo API
+  title: Babylon API
   version: 1.0.0
-  description: A simple API to echo a value back to the user.
+  description: Babylon API Specification.
 
 servers:
   - url: /api
@@ -27,15 +27,3 @@ components:
       bearerFormat: JWT # optional, arbitrary value for documentation purposes
       # Path to where the decode logic lives
       x-bearerInfoFunc: server.app.decode_token
-
-#    get:
-#      operationId: server.controllers.echo.do_echo
-#      summary: Echo a value back
-#      description: Returns the value provided in the query parameter, or an empty string if omitted.
-#      parameters:
-#        - name: value
-#          in: query
-#          required: false
-#          description: The value to be echoed back.
-#          schema:
-#            type: string

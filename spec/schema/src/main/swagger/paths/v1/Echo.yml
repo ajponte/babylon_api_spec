@@ -17,3 +17,5 @@ get:
       $ref: "../../components/responses.yml#/HttpEchoResponse"
     '400':
       $ref: "../../components/responses.yml#/HttpBadRequestResponse"
+    '500':
+      $ref: "../../components/responses.yml#/HttpInternalServerErrorResponse"
