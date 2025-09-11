@@ -137,3 +137,6 @@ dist
 # Intellij
 .idea/*
 
+# Generated spec output
+spec/.bundle/
+

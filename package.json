@@ -1,0 +1,12 @@
+{
+  "name": "babylon-api-spec",
+  "version": "0.0.1",
+  "main": "bundleModularSchema.js",
+  "dependencies": {
+    "@redocly/cli": "^1.31.3",
+    "jszip": "^3.10.1"
+  },
+  "scripts": {
+    "bundle-modular-schema": "node bundleModularSchema.js"
+  }
+}
