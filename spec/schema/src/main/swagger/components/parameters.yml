@@ -8,5 +8,6 @@ TransactionType:
 
 UtcTimestamp:
   type: integer
-  description: A UTC timestamp.
+  format: int64
+  description: A UNIX UTC timestamp in seconds.
   example: 1756773077
