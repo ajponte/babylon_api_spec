@@ -12,95 +12,87 @@ HttpBadRequestResponse:
   content:
     application/json:
       schema:
-        type: object
-        properties:
-          message:
-            description: "Message for debugging"
-            type: string
+        $ref: '#/components/schemas/DebugMessageResponse'
 
 HttpNotFoundResponse:
   description: "404 - Resource not found"
   content:
     application/json:
       schema:
-        type: object
-        properties:
-          message:
-            description: "Message for debugging"
-            type: string
+        $ref: '#/components/schemas/DebugMessageResponse'
 
 HttpNoContentResponse:
   description: "204 - No Content"
   content:
     application/json:
       schema:
-        type: object
-        nullable: true
-        properties:
-          message:
-            description: "Message for debugging"
-            type: string
+        $ref: '#/components/schemas/DebugMessageResponse'
 
 HttpForbiddenResponse:
   description: "403 - Required permssions not present."
   content:
     application/json:
       schema:
-        type: object
-        properties:
-          message:
-            description: "Message for debugging"
-            type: string
+        $ref: '#/components/schemas/DebugMessageResponse'
 
 HttpUnauthorizedResponse:
   description: "401 - Not Authorized to perform this action"
   content:
     application/json:
       schema:
-        type: object
-        properties:
-          message:
-            description: "Message for debugging"
-            type: string
+        $ref: '#/components/schemas/DebugMessageResponse'
 
 HttpOKResponse:
   description: "200 - OK"
   content:
     application/json:
       schema:
-        type: object
-        properties:
-          message:
-            description: "Message for debugging"
-            type: string
+        $ref: '#/components/schemas/DebugMessageResponse'
 
 HttpBadGatewayResponse:
   description: "502- Bad Gateway"
   content:
     application/json:
       schema:
-        type: object
-        properties:
-          message:
-            description: "Message for debugging"
-            type: string
+        $ref: '#/components/schemas/DebugMessageResponse'
 
 HttpInternalServerErrorResponse:
   description: "500 - Internal Server Error"
   content:
     application/json:
       schema:
-        type: object
-        properties:
-          message:
-            description: "Message for debugging"
-            type: string
+        $ref: '#/components/schemas/DebugMessageResponse'
+
+HttpTransactionHistorySearchResponse:
+  description: "200 - Document follows"
+  content:
+    application/json:
+      schema:
+        type: array
+        items:
+          $ref: '#/components/schemas/HistoryTransaction'
+
 
 components:
   schemas:
+    DebugMessageResponse:
+      type: string
+      description: A message attached to an HTTP response for debugging purposes.
+
     EchoResponse:
       type: object
       properties:
         echoed_value:
           type: string
           description: The value that was echoed back.
+
+    HistoryTransaction:
+      type: object
+      properties:
+        id:
+          $ref: '#/components/schemas/TransactionId'
+
+    TransactionId:
+      type: string
+      description: A unique identifier for a transaction.
+      example: "a400eb84-ee4d-4362-b2ac-731ef7a232f3"
