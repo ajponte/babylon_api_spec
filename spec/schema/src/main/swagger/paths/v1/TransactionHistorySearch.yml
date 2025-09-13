@@ -30,6 +30,10 @@ get:
       $ref: '../../components/responses.yml#/HttpTransactionHistorySearchResponse'
     '400':
       $ref: "../../components/responses.yml#/HttpBadRequestResponse"
+    '401':
+      $ref: "../../components/responses.yml#/HttpUnauthorizedResponse"
+    '403':
+      $ref: "../../components/responses.yml#/HttpForbiddenResponse"
     '404':
       $ref: "../../components/responses.yml#/HttpNotFoundResponse"
     '500':
