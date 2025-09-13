@@ -1,5 +1,9 @@
 ---
 # Common request parameters
+TransactionId:
+  type: string
+  format: uuid
+
 TransactionType:
   type: string
   enum:

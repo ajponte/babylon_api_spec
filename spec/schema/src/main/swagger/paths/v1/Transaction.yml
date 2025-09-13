@@ -1,0 +1,17 @@
+---
+# Operations around a single transaction.
+
+get:
+  tags: ["transaction"]
+  operationId: "server.controllers.transaction.transaction_get_by_id"
+  summary: "Fetch a single transaction."
+  parameters:
+    - name: transactionId
+      in: query
+      required: true
+      schema:
+        $ref: "../../components/parameters.yml#/TransactionId"
+
+  responses:
+    '200':
+      $ref: '../../components/responses.yml#/HttpTransactionHistoryResponse'
