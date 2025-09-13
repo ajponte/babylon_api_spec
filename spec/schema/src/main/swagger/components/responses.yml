@@ -63,6 +63,13 @@ HttpInternalServerErrorResponse:
       schema:
         $ref: '#/components/schemas/DebugMessageResponse'
 
+HttpTransactionHistoryResponse:
+  description: "200 - Document follows"
+  content:
+    application/json:
+      schema:
+        $ref: '#/components/schemas/HistoryTransaction'
+
 HttpTransactionHistorySearchResponse:
   description: "200 - Document follows"
   content:

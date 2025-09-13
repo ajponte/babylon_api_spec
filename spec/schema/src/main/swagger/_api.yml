@@ -19,8 +19,11 @@ paths:
   /echo:
     $ref: "./paths/v1/Echo.yml"
 
+  /history/transaction:
+    $ref: "./paths/v1/Transaction.yml"
+
   /history/transactions/{transactionType}:
-    $ref: "./paths/v1/TransactionHistory.yml"
+    $ref: "./paths/v1/TransactionHistorySearch.yml"
 
 components:
   securitySchemes:
