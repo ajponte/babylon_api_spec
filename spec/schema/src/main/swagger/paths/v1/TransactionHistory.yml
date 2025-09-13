@@ -14,12 +14,14 @@ get:
       in: query
       required: true
       description: UTC start time for transaction history
+      example: 1757745394
       schema:
         $ref: "../../components/parameters.yml#/UtcTimestamp"
     - name: end
       in: query
       required: true
       description: UTC end time for the transaction history
+      example: 1757748994
       schema:
         $ref: "../../components/parameters.yml#/UtcTimestamp"
 

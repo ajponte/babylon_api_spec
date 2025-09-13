@@ -68,9 +68,12 @@ HttpTransactionHistorySearchResponse:
   content:
     application/json:
       schema:
-        type: array
-        items:
-          $ref: '#/components/schemas/HistoryTransaction'
+        type: object
+        properties:
+          transactions:
+            type: array
+            items:
+              $ref: '#/components/schemas/HistoryTransaction'
 
 
 components:
