@@ -1,0 +1,34 @@
+---
+get:
+  tags: ["transaction"]
+  operationId: "server.controllers.transaction.transaction_history"
+  summary: "Fetch transaction history."
+  parameters:
+    - name: transactionType
+      in: path
+      required: true
+      description: Transactions type
+      schema:
+        $ref: "../../components/parameters.yml#/TransactionType"
+    - name: start
+      in: query
+      required: true
+      description: UTC start time for transaction history
+      schema:
+        $ref: "../../components/parameters.yml#/UtcTimestamp"
+    - name: end
+      in: query
+      required: true
+      description: UTC end time for the transaction history
+      schema:
+        $ref: "../../components/parameters.yml#/UtcTimestamp"
+
+  responses:
+    '200':
+      $ref: '../../components/responses.yml#/HttpTransactionHistorySearchResponse'
+    '400':
+      $ref: "../../components/responses.yml#/HttpBadRequestResponse"
+    '404':
+      $ref: "../../components/responses.yml#/HttpNotFoundResponse"
+    '500':
+      $ref: "../../components/responses.yml#/HttpInternalServerErrorResponse"

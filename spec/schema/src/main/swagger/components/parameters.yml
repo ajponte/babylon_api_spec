@@ -1,0 +1,12 @@
+---
+# Common request parameters
+TransactionType:
+  type: string
+  enum:
+    - ingress
+    - egress
+
+UtcTimestamp:
+  type: integer
+  description: A UTC timestamp.
+  example: 1756773077

@@ -19,6 +19,9 @@ paths:
   /echo:
     $ref: "./paths/v1/Echo.yml"
 
+  /history/transactions/{transactionType}:
+    $ref: "./paths/v1/TransactionHistory.yml"
+
 components:
   securitySchemes:
     bearerAuth: # arbitrary name for the security scheme
