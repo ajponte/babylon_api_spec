@@ -11,6 +11,11 @@ get:
       required: true
       schema:
         $ref: "../../components/parameters.yml#/TransactionId"
+    - name: transactionType
+      in: query
+      required: true
+      schema:
+        $ref: "../../components/parameters.yml#/TransactionType"
 
   responses:
     '200':
