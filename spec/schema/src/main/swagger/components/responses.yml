@@ -86,8 +86,11 @@ HttpTransactionHistorySearchResponse:
 components:
   schemas:
     DebugMessageResponse:
-      type: string
-      description: A message attached to an HTTP response for debugging purposes.
+      type: object
+      properties:
+        message:
+          type: string
+          description: A message attached to an HTTP response for debugging purposes.
 
     EchoResponse:
       type: object
