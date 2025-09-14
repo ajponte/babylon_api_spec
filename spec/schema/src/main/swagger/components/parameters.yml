@@ -2,7 +2,8 @@
 # Common request parameters
 TransactionId:
   type: string
-  format: uuid
+  description: Transaction unique ID.
+  example: f7bf189b-e7c2-4f85-bf73-0c45e7825a74
 
 TransactionType:
   type: string
