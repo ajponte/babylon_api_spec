@@ -56,6 +56,13 @@ HttpBadGatewayResponse:
       schema:
         $ref: '#/components/schemas/DebugMessageResponse'
 
+HttpConflictResponse:
+  description: "409- Conflict"
+  content:
+    application/json:
+      schema:
+        $ref: '#/components/schemas/DebugMessageResponse'
+
 HttpInternalServerErrorResponse:
   description: "500 - Internal Server Error"
   content:
@@ -69,6 +76,16 @@ HttpTransactionHistoryResponse:
     application/json:
       schema:
         $ref: '#/components/schemas/HistoryTransaction'
+
+HttpTransactionPutResponse:
+  description: "201 - Object created"
+  content:
+    application/json:
+      schema:
+        type: object
+        parameters:
+          transactionId:
+            $ref: "#/components/schemas/TransactionId"
 
 HttpTransactionHistorySearchResponse:
   description: "200 - Document follows"
