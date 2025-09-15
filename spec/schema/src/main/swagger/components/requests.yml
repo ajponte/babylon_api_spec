@@ -48,6 +48,9 @@ components:
         - ATM_WITHDRAWAL
         - CARD_PAYMENT
         - ONLINE_TRANSFER
+        - INVESTMENT
+        - SALARY
+        - REFUND
 
     DatePosted:
       type: string
