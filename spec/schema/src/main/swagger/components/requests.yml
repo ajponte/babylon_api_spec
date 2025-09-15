@@ -1,0 +1,56 @@
+---
+Transaction:
+  type: object
+  description: A single transaction.
+  properties:
+    transactionType:
+      $ref: '#/components/schemas/TransactionType'
+    transactionSource:
+      $ref: '#/components/schemas/TransactionSource'
+    datePosted:
+      $ref: '#/components/schemas/DatePosted'
+    description:
+      type: string
+      description: Description of the transaction.
+    amount:
+      type: number
+      description: Amount posted in the transaction.
+      format: double
+      example: 123.4
+    slipNumber:
+      type: string
+      description: Slip number from an external institution.
+
+  required:
+    - transactionType
+    - transactionSource
+    - datePosted
+    - description
+    - amount
+
+# todo move to common schemas
+components:
+  schemas:
+    TransactionId:
+      type: string
+      description: A unique identifier for a transaction.
+      example: "a400eb84-ee4d-4362-b2ac-731ef7a232f3"
+
+    TransactionType:
+      type: string
+      enum:
+        - ingress
+        - egress
+
+    TransactionSource:
+      type: string
+      enum:
+        - ATM_WITHDRAWAL
+        - CARD_PAYMENT
+        - ONLINE_TRANSFER
+
+    DatePosted:
+      type: string
+      format: date
+      description: Date the transaction was posted to an external account.
+      example: "2025-04-20"

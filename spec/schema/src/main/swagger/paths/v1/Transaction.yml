@@ -31,3 +31,25 @@ get:
     '500':
       $ref: "../../components/responses.yml#/HttpInternalServerErrorResponse"
 
+put:
+  tags: ["transaction"]
+  operationId: "server.controllers.transaction.transaction_put"
+  summary: "Add a signle transaction to history"
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: "../../components/requests.yml#/Transaction"
+  responses:
+    '201':
+      $ref: '../../components/responses.yml#/HttpTransactionHistoryResponse'
+    '400':
+      $ref: "../../components/responses.yml#/HttpBadRequestResponse"
+    '401':
+      $ref: "../../components/responses.yml#/HttpUnauthorizedResponse"
+    '403':
+      $ref: "../../components/responses.yml#/HttpForbiddenResponse"
+    '409':
+      $ref: "../../components/responses.yml#/HttpConflictResponse"
+    '500':
+      $ref: "../../components/responses.yml#/HttpInternalServerErrorResponse"
