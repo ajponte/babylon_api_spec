@@ -80,9 +80,9 @@ HttpTransactionHistoryResponse:
 HttpDataLakeStatusGetResponse:
   description: "200 - Document follows"
   content:
-  application/json:
-    schema:
-      $ref: '#/components/schemas/DataLakeStatus'
+    application/json:
+      schema:
+        $ref: '#/components/schemas/DataLakeStatusResponse'
 
 HttpTransactionPutResponse:
   description: "201 - Object created"
@@ -113,6 +113,21 @@ components:
       type: string
       description: Datalake (mongo) collection.
       example: 'source-2025-01-30'
+
+    DataLakeStatusResponse:
+      type: object
+      description: >-
+        Response of querying for datalake status. Datalake status is recorded by
+        collection. By default, the recent known record will be returned.
+      properties:
+        records:
+          $ref: '#/components/schemas/DatalakeStatusHistory'
+
+    DatalakeStatusHistory:
+      type: array
+      description: Container holding records of data lake sync records.
+      items:
+        - $ref: '#/components/schemas/DataLakeStatus'
 
     DataLakeStatus:
       type: object

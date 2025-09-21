@@ -1,8 +1,10 @@
 ---
+# Operations around the Babylon data lake.
+
 get:
   tags: ["datalake"]
   operationId: "server.controllers.datalake.sync_status_get"
-  description: "Return the recent sync record from the data lake."
+  summary: "Fetch the recent sync status from the data lake."
   parameters:
     - name: dataLakeCollectionName
       in: query
