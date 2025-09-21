@@ -19,13 +19,13 @@ paths:
   /echo:
     $ref: "./paths/v1/Echo.yml"
 
-  /history/v1/transaction:
+  /v1/history/transaction:
     $ref: "./paths/v1/Transaction.yml"
 
-  /history/v1/transactions/{transactionType}:
+  /v1/history/transactions/{transactionType}:
     $ref: "./paths/v1/TransactionHistorySearch.yml"
 
-  /datalake/v1/sync/status:
+  /v1/datalake/sync/status:
     $ref: "./paths/v1/DataLake.yml"
 
 components:
