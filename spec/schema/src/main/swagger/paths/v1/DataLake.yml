@@ -1,0 +1,24 @@
+---
+get:
+  tags: ["datalake"]
+  operationId: "server.controllers.datalake.sync_status_get"
+  description: "Return the recent sync record from the data lake."
+  parameters:
+    - name: dataLakeCollectionName
+      in: query
+      required: false
+      schema:
+        $ref: "../../components/parameters.yml#/DataLakeCollectionName"
+  responses:
+    '200':
+      $ref: "../../components/responses.yml#/HttpDataLakeStatusGetResponse"
+    '400':
+      $ref: "../../components/responses.yml#/HttpBadRequestResponse"
+    '401':
+      $ref: "../../components/responses.yml#/HttpUnauthorizedResponse"
+    '403':
+      $ref: "../../components/responses.yml#/HttpForbiddenResponse"
+    '404':
+      $ref: "../../components/responses.yml#/HttpNotFoundResponse"
+    '500':
+      $ref: "../../components/responses.yml#/HttpInternalServerErrorResponse"

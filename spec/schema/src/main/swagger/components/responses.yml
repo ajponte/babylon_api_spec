@@ -77,6 +77,13 @@ HttpTransactionHistoryResponse:
       schema:
         $ref: '#/components/schemas/HistoryTransaction'
 
+HttpDataLakeStatusGetResponse:
+  description: "200 - Document follows"
+  content:
+  application/json:
+    schema:
+      $ref: '#/components/schemas/DataLakeStatus'
+
 HttpTransactionPutResponse:
   description: "201 - Object created"
   content:
@@ -102,6 +109,24 @@ HttpTransactionHistorySearchResponse:
 
 components:
   schemas:
+    DataLakeCollectionName:
+      type: string
+      description: Datalake (mongo) collection.
+      example: 'source-2025-01-30'
+
+    DataLakeStatus:
+      type: object
+      properties:
+        collection:
+          $ref: '#/components/schemas/DataLakeCollectionName'
+        lastSyncTimestamp:
+          $ref: '#/components/schemas/LastSyncTimestamp'
+        lastSyncRecordsUploaded:
+          $ref: '#/components/schemas/LastSyncRecordsUploaded'
+      required:
+        - lastSyncTimestamp
+        - lastSyncRecordsUploaded
+
     DebugMessageResponse:
       type: object
       properties:
@@ -126,3 +151,14 @@ components:
       type: string
       description: A unique identifier for a transaction.
       example: "a400eb84-ee4d-4362-b2ac-731ef7a232f3"
+
+    LastSyncTimestamp:
+      type: string
+      format: datetime
+      example: "2025-09-21T03:39:07.757+00:00"
+
+    LastSyncRecordsUploaded:
+      type: integer
+      description: The `records_uploaded` value in the most recent sync record.
+      example: 20
+

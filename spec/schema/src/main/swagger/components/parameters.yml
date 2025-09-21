@@ -1,5 +1,10 @@
 ---
 # Common request parameters
+DataLakeCollectionName:
+  type: string
+  description: Data Lake (mongo) collection name.
+  example: 'source-2025-01-30'
+
 TransactionId:
   type: string
   description: Transaction unique ID.

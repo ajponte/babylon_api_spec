@@ -25,6 +25,9 @@ paths:
   /history/transactions/{transactionType}:
     $ref: "./paths/v1/TransactionHistorySearch.yml"
 
+  /datalake/sync/status:
+    $ref: "./paths/v1/DataLake.yml"
+
 components:
   securitySchemes:
     bearerAuth: # arbitrary name for the security scheme
