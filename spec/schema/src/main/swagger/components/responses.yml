@@ -127,7 +127,7 @@ components:
       type: array
       description: Container holding records of data lake sync records.
       items:
-        - $ref: '#/components/schemas/DataLakeStatus'
+        $ref: '#/components/schemas/DataLakeStatus'
 
     DataLakeStatus:
       type: object
