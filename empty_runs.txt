@@ -1,0 +1,4 @@
+Temporary workaround due to the limitiations of Github's Artifactory free-tier (and we want to preserve main branch protections).
+
+To re-trigger a CI/CD build on main, update and merge this file.
+
